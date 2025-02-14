@@ -238,6 +238,10 @@ body {
     margin-left: calc(-50vw + 50%);
 }
 
+.slider-container2{
+    margin-top: -80px;
+}
+
 @keyframes slideLeft {
     0% {
         transform: translateX(0);
