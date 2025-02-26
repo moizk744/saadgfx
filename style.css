@@ -1,6 +1,9 @@
 :root {
     --primary-color: #1b8ef9;
     --secondary-color: #8cc7ff;
+    --btn-color: #ff8f00;
+    --btn-color2: #ffc400;
+    --btn-gradient: linear-gradient(120deg, var(--btn-color) 0%, var(--btn-color2) 100%);
 }
 
 body {
@@ -11,7 +14,6 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     overflow-x: hidden;
-    /* Added line */
 }
 
 .navbar {
@@ -350,6 +352,51 @@ body {
     }
 }
 
+.work_button {
+    text-align: center;
+}
+
+.btn-work {
+    background: var(--btn-gradient) !important;
+    color: white !important;
+    transition: background 0.3s ease !important;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    padding: 16px 24px;
+    font-size: 18px;
+    font-family: "Plus Jakarta Sans", serif;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.btn-work::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--btn-color);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.btn-work:hover::before {
+    opacity: 1;
+}
+
+.btn-work:hover {
+    color: white !important;
+}
+.btn-work span{
+    padding-left: 5px;
+}
 
 @media (max-width: 768px) {
 
