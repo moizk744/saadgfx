@@ -1,5 +1,6 @@
 :root {
-    --primary-color: #1b8ef9;
+    /* --primary-color: #1b8ef9; */
+    --primary-color: #ff5f1a;
     --secondary-color: #8cc7ff;
     --btn-color: #ff8f00;
     --btn-color2: #ffc400;
@@ -200,34 +201,32 @@ body {
 
 .hero_content {
     max-width: 800px;
-    margin: 0 auto;
+    margin: -30px auto;
 }
 
 .hero_heading {
-    font-size: 80px;
+    font-size: 65px;
     font-weight: bold;
     text-transform: capitalize;
     color: var(--primary-color);
     display: inline-block;
-    font-family: "Poppins", serif;
+    /* font-family: "Poppins", serif; */
+    /* font-family: "Bebas Neue", serif; */
+    /* font-family: "Poppins", serif; */
+    font-family: "Roboto", serif;
     /* font-family: "Anton", serif; */
 }
 
 .hero_description {
     font-family: "Montserrat", serif;
-    font-size: 18px;
+    font-size: 20px;
     color: #ffffff;
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
 }
 
-.thumnail_section {
-    text-align: center;
-    display: inline-block;
-}
-
 .thumnail_section h1 span {
-    font-size: 80px;
+    font-size: 60px;
     font-weight: bold;
     text-transform: capitalize;
     color: var(--primary-color);
@@ -236,25 +235,23 @@ body {
 }
 
 .thumnail_section h1 {
-    font-size: 80px;
+    font-size: 60px;
     font-weight: bold;
     text-transform: capitalize;
     color: white;
     text-align: center;
     font-family: "Poppins", serif;
+    margin-bottom: 20px !important;
 }
 
 .thumbnails-section {
     width: 100%;
     padding: 2rem 0;
     position: relative;
+    text-align: center;
+    display: inline-block;
 }
 
-.thumbnails-section {
-    width: 100%;
-    padding: 2rem 0;
-    position: relative;
-}
 
 
 .gallery-wrap {
@@ -394,8 +391,13 @@ body {
 .btn-work:hover {
     color: white !important;
 }
-.btn-work span{
+
+.btn-work span {
     padding-left: 5px;
+}
+
+.faq{
+    text-align: center;
 }
 
 @media (max-width: 768px) {
