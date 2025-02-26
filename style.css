@@ -396,7 +396,7 @@ body {
     padding-left: 5px;
 }
 
-.faq{
+.faq {
     text-align: center;
 }
 
@@ -449,6 +449,62 @@ body {
             transform: translateX(0);
         }
     }
+
+}
+
+.gallery-item {
+    width: 300px;
+    height: 180px;
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-300px * 14));
+    }
+}
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(calc(-300px * 14));
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+@media (max-width: 460px) {
+
+    .gallery-item {
+        width: 250px;
+        /* Slightly smaller for very small screens */
+        height: 150px;
+    }
+
+    @keyframes slideLeft {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(calc(-250px * 14));
+        }
+    }
+
+    @keyframes slideRight {
+        0% {
+            transform: translateX(calc(-250px * 14));
+        }
+
+        100% {
+            transform: translateX(0);
+        }
+    }
 }
 
 @media(max-width:460px) {
@@ -459,22 +515,31 @@ body {
     }
 }
 
-
-
-@media (max-width: 993px) {
-    .nav-link {
-        display: flex !important;
-        align-items: center !important;
-        gap: 15px !important;
-        list-style: none !;
-        margin: 0;
-        padding: 0;
+@media (max-width: 998px) {
+    .gallery-item {
+        width: calc(50% - 20px);
+        /* Two items per row, accounting for margin */
+        height: 180px;
     }
 
-    .navbar {
-        /* Make navbar transparent */
-        backdrop-filter: blur(10px);
-        /* Frosted glass effect */
-        -webkit-backdrop-filter: blur(10px);
+    @keyframes slideLeft {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(calc(-50% * 14));
+            /* Adjust based on the number of unique images */
+        }
+    }
+
+    @keyframes slideRight {
+        0% {
+            transform: translateX(calc(-50% * 14));
+        }
+
+        100% {
+            transform: translateX(0);
+        }
     }
 }
