@@ -1,0 +1,55 @@
+.btn-danger {
+    background-color: #e75d50;
+    border-color: #e75d50;
+  }
+  
+  .btn-danger:hover {
+    background-color: #d04b3f;
+    border-color: #d04b3f;
+  }
+  
+  /* Fix for placeholder text */
+  .custom-placeholder::placeholder {
+    color: #767676 !important;
+    opacity: 1 !important;
+  }
+  
+  /* For Firefox */
+  .custom-placeholder::-moz-placeholder {
+    color: #767676 !important;
+    opacity: 1 !important;
+  }
+  
+  /* For Internet Explorer */
+  .custom-placeholder:-ms-input-placeholder {
+    color: #767676 !important;
+  }
+  
+  /* For Microsoft Edge */
+  .custom-placeholder::-ms-input-placeholder {
+    color: #767676 !important;
+  }
+  
+  .form-control:focus {
+    background-color: #1a1a1a;
+    border-color: #e75d50;
+    box-shadow: 0 0 0 0.25rem rgba(231, 93, 80, 0.25);
+  }
+  
+  .card {
+    border-radius: 12px;
+    background-color: #171717 !important;
+    border: none;
+  }
+  
+  /* Make sure input backgrounds stay dark on autofill */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus {
+    -webkit-text-fill-color: white;
+    -webkit-box-shadow: 0 0 0px 1000px #1a1a1a inset;
+    transition: background-color 5000s ease-in-out 0s;
+  }

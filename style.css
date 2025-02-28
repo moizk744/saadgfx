@@ -407,30 +407,7 @@ body {
     color: var(--primary-color);
 }
 
-.accordion {
-    width: 55%;
-    margin: 0 auto;
-}
 
-.accordion-item,
-.accordion-button {
-    background-color: #0E0E10 !important;
-    font-family: "Manrope", sans-serif;
-}
-
-.accordion-button:active {
-    background-color: #1A1A1D !important;
-}
-
-.accordion-body {
-    color: #AEB0B6 !important;
-}
-
-.accordion-button {
-    color: rgba(228, 228, 230, 1) !important;
-    font-size: 20px;
-    font-weight: bolder;
-}
 
 @media (max-width: 768px) {
 
