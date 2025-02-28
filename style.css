@@ -8,7 +8,7 @@
 }
 
 body {
-    background: url(./bg.jpg);
+    background: url(./bg.jpg) fixed;
     min-height: 100vh;
     width: 100%;
     background-position: center;
@@ -396,8 +396,37 @@ body {
     padding-left: 5px;
 }
 
-.faq {
+.faq{
     text-align: center;
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+.faq h1 span{
+    font-size: 50px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.accordion{
+    width:55%;
+    margin: 0 auto;
+}
+.accordion-item,.accordion-button{
+    background-color: #0E0E10 !important;
+    font-family: "Manrope", sans-serif;
+}
+
+.accordion-button:active{
+    background-color: #1A1A1D !important;
+}
+.accordion-body{
+    color: #AEB0B6 !important;
+}
+.accordion-button{
+    color: rgba(228,228,230,1) !important;
+    font-size: 20px;
+    font-weight: bolder;
 }
 
 @media (max-width: 768px) {
@@ -418,11 +447,6 @@ body {
 
     .hero_description {
         font-size: 16px;
-    }
-
-    .logo img {
-        width: 180px;
-        /* Smaller width on smaller screens */
     }
 
     .gallery-item {
@@ -449,61 +473,8 @@ body {
             transform: translateX(0);
         }
     }
-
-}
-
-.gallery-item {
-    width: 300px;
-    height: 180px;
-}
-
-@keyframes slideLeft {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(calc(-300px * 14));
-    }
-}
-
-@keyframes slideRight {
-    0% {
-        transform: translateX(calc(-300px * 14));
-    }
-
-    100% {
-        transform: translateX(0);
-    }
-}
-
-
-@media (max-width: 460px) {
-
-    .gallery-item {
-        width: 250px;
-        /* Slightly smaller for very small screens */
-        height: 150px;
-    }
-
-    @keyframes slideLeft {
-        0% {
-            transform: translateX(0);
-        }
-
-        100% {
-            transform: translateX(calc(-250px * 14));
-        }
-    }
-
-    @keyframes slideRight {
-        0% {
-            transform: translateX(calc(-250px * 14));
-        }
-
-        100% {
-            transform: translateX(0);
-        }
+    .faq h1 span{
+        font-size: 2.2rem;
     }
 }
 
@@ -513,33 +484,8 @@ body {
     .thumnail_section h1 span {
         font-size: 40px;
     }
-}
-
-@media (max-width: 998px) {
-    .gallery-item {
-        width: calc(50% - 20px);
-        /* Two items per row, accounting for margin */
-        height: 180px;
-    }
-
-    @keyframes slideLeft {
-        0% {
-            transform: translateX(0);
-        }
-
-        100% {
-            transform: translateX(calc(-50% * 14));
-            /* Adjust based on the number of unique images */
-        }
-    }
-
-    @keyframes slideRight {
-        0% {
-            transform: translateX(calc(-50% * 14));
-        }
-
-        100% {
-            transform: translateX(0);
-        }
+    .faq h1 span{
+        font-size: 2rem;
     }
 }
+
