@@ -1,5 +1,4 @@
 :root {
-    /* --primary-color: #1b8ef9; */
     --primary-color: #ff5f1a;
     --secondary-color: #8cc7ff;
     --btn-color: #ff8f00;
@@ -316,7 +315,7 @@ body {
 }
 
 .gallery-item:hover img {
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
 .slider-container {
@@ -396,35 +395,39 @@ body {
     padding-left: 5px;
 }
 
-.faq{
+.faq {
     text-align: center;
     margin-top: 100px;
     margin-bottom: 50px;
 }
 
-.faq h1 span{
+.faq h1 span {
     font-size: 50px;
     font-weight: bold;
     color: var(--primary-color);
 }
 
-.accordion{
-    width:55%;
+.accordion {
+    width: 55%;
     margin: 0 auto;
 }
-.accordion-item,.accordion-button{
+
+.accordion-item,
+.accordion-button {
     background-color: #0E0E10 !important;
     font-family: "Manrope", sans-serif;
 }
 
-.accordion-button:active{
+.accordion-button:active {
     background-color: #1A1A1D !important;
 }
-.accordion-body{
+
+.accordion-body {
     color: #AEB0B6 !important;
 }
-.accordion-button{
-    color: rgba(228,228,230,1) !important;
+
+.accordion-button {
+    color: rgba(228, 228, 230, 1) !important;
     font-size: 20px;
     font-weight: bolder;
 }
@@ -450,8 +453,8 @@ body {
     }
 
     .gallery-item {
-        width: 300px;
-        height: 180px;
+        width: 350px;
+        height: 200px;
     }
 
     @keyframes slideLeft {
@@ -473,7 +476,8 @@ body {
             transform: translateX(0);
         }
     }
-    .faq h1 span{
+
+    .faq h1 span {
         font-size: 2.2rem;
     }
 }
@@ -484,8 +488,8 @@ body {
     .thumnail_section h1 span {
         font-size: 40px;
     }
-    .faq h1 span{
+
+    .faq h1 span {
         font-size: 2rem;
     }
 }
-
