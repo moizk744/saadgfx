@@ -453,8 +453,8 @@ body {
     }
 
     .gallery-item {
-        width: 350px;
-        height: 200px;
+        width: 200px;
+        height: 180px;
     }
 
     @keyframes slideLeft {
