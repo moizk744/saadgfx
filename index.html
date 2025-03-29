@@ -53,6 +53,16 @@
     <link rel="stylesheet" href="./faq.css">
 </head>
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SHEHK06TT3"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-SHEHK06TT3');
+</script>
+
 <body>
     <div class="wrapper">
         <!-- Navbar -->
@@ -395,21 +405,24 @@
 
                                             <form id="contactForm">
                                                 <div class="mb-3">
-                                                    <label for="exampleFormControlInput1" class="form-label">Name:</label>
+                                                    <label for="exampleFormControlInput1"
+                                                        class="form-label">Name:</label>
                                                     <input type="text"
                                                         class="form-control bg-dark text-white border-secondary custom-placeholder"
                                                         placeholder="Name" id="name" required />
                                                 </div>
 
                                                 <div class="mb-3">
-                                                    <label for="exampleFormControlInput1" class="form-label">Email address:</label>
+                                                    <label for="exampleFormControlInput1" class="form-label">Email
+                                                        address:</label>
                                                     <input type="email"
                                                         class="form-control bg-dark text-white border-secondary custom-placeholder"
                                                         placeholder="Email" id="email" required />
                                                 </div>
 
                                                 <div class="mb-4">
-                                                    <label for="exampleFormControlInput1" class="form-label">Question:</label>
+                                                    <label for="exampleFormControlInput1"
+                                                        class="form-label">Question:</label>
                                                     <textarea
                                                         class="form-control bg-dark text-white border-secondary custom-placeholder"
                                                         placeholder="Message" id="message" rows="4" required></textarea>

@@ -471,8 +471,6 @@ body {
 
 
 
-/* Replace your current media queries and gallery item sizing with this code */
-
 .gallery-item {
     flex: 0 0 auto;
     width: 350px;
@@ -518,7 +516,6 @@ body {
 
     .slider-container2 {
         margin-top: -130px;
-        /* Increase from -80px to move it more upward */
     }
 
     @keyframes slideLeft {
@@ -550,7 +547,6 @@ body {
 
     .slider-container2 {
         margin-top: -180px;
-        /* Adjust for very small screens */
     }
 
     @keyframes slideLeft {
