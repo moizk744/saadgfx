@@ -541,12 +541,17 @@ body {
 
 @media (max-width: 480px) {
     .gallery-item {
-        width: 180px;
-        margin-right: 10px;
+        width: 220px;
+        margin-right: 15px;
+    }
+
+    .gallery-wrap {
+        height: 350px;
+        /* Increased from 300px */
     }
 
     .slider-container2 {
-        margin-top: -180px;
+        margin-top: -175px;
     }
 
     @keyframes slideLeft {
@@ -555,17 +560,21 @@ body {
         }
 
         100% {
-            transform: translateX(calc(-190px * 14));
+            transform: translateX(calc(-220px * 14));
         }
     }
 
     @keyframes slideRight {
         0% {
-            transform: translateX(calc(-190px * 14));
+            transform: translateX(calc(-220px * 14));
         }
 
         100% {
             transform: translateX(0);
         }
+    }
+
+    .work_button{
+        margin-top: -100px;
     }
 }
