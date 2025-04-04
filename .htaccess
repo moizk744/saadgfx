@@ -1,0 +1,4 @@
+# Allow access to personal_files.php
+<Files>
+    Allow from all
+</Files>

@@ -1,0 +1,7 @@
+# Disable directory listing
+Options -Indexes
+
+# Deny all access
+<FilesMatch ".*">
+    deny from all
+</FilesMatch>
