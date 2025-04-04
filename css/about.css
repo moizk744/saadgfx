@@ -9,19 +9,20 @@
     --btn-alt: #8cc7ff;
     --btn-alt2: #5aa9ff;
 }
-body{
-    font-family: 'Poppins', sans-serif;
-}
+
+
 
 .section-title {
     color: var(--primary-color);
     font-weight: 700;
     margin-bottom: 30px;
     font-size: 2.5rem;
+    font-family: 'Poppins', sans-serif;
 }
 
 .about-container {
     padding: 80px 0;
+    font-family: 'Poppins', sans-serif;
 }
 
 .intro-text {
@@ -29,11 +30,13 @@ body{
     margin-bottom: 50px;
     line-height: 1.8;
     color: white;
+    font-family: 'Poppins', sans-serif;
 }
 
 .highlight {
     color: var(--primary-color);
     font-weight: 600;
+    font-family: 'Poppins', sans-serif;
 }
 
 .skill-card {
@@ -43,6 +46,7 @@ body{
     margin-bottom: 25px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     height: 100%;
+    font-family: 'Poppins', sans-serif;
 }
 
 .skill-card:hover {
@@ -54,6 +58,7 @@ body{
     font-size: 3rem;
     color: var(--primary-color);
     margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .skill-title {
@@ -61,6 +66,7 @@ body{
     margin-bottom: 15px;
     font-size: 1.3rem;
     color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
 }
 
 .timeline {
@@ -107,6 +113,7 @@ body{
     margin-bottom: 25px;
     position: relative;
     height: 100%;
+    font-family: 'Poppins', sans-serif;
 }
 
 .testimonial-card:before {
@@ -117,21 +124,25 @@ body{
     left: 15px;
     font-size: 60px;
     color: rgba(255, 107, 51, 0.2);
+    font-family: 'Poppins', sans-serif;
 }
 
 .client-info {
     display: flex;
     align-items: center;
     margin-top: 20px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .client-name {
     font-weight: 600;
+    font-family: 'Poppins', sans-serif;
 }
 
 .client-title {
     font-size: 0.9rem;
     opacity: 0.8;
+    font-family: 'Poppins', sans-serif;
 }
 
 .stats-container {
@@ -139,10 +150,12 @@ body{
     border-radius: 10px;
     padding: 40px 25px;
     margin-top: 50px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .stat-item {
     text-align: center;
+    font-family: 'Poppins', sans-serif;
 }
 
 .stat-number {
@@ -150,11 +163,13 @@ body{
     font-weight: 700;
     color: var(--primary-color);
     margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .stat-label {
     font-size: 1rem;
     opacity: 0.9;
+    font-family: 'Poppins', sans-serif;
 }
 
 .cta-section {
@@ -164,12 +179,14 @@ body{
     text-align: center;
     margin-top: 80px;
     margin-bottom: 50px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .cta-title {
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .cta-btn {
@@ -180,6 +197,7 @@ body{
     border-radius: 30px;
     border: none;
     transition: transform 0.3s ease;
+    font-family: 'Poppins', sans-serif;
 }
 
 .cta-btn:hover {
