@@ -8,6 +8,34 @@ body {
     overflow-x: hidden;
 }
 
+body {
+    --sb-track-color: #121212;
+    --sb-thumb-color: #ff5722;
+    --sb-size: 8px;
+}
+
+body::-webkit-scrollbar {
+    width: var(--sb-size)
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-color);
+    border-radius: 10px;
+    border: 1px solid #000000;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+    body {
+        scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+    }
+}
+
+
 .navbar {
     position: fixed;
     top: 2rem;
@@ -263,7 +291,8 @@ body {
         height: 0.9rem;
         font-size: 1.1rem
     }
-    .gallery-container{
+
+    .gallery-container {
         margin-top: 10rem;
     }
 }
@@ -291,7 +320,8 @@ body {
         height: 0.6rem;
         font-size: 1rem;
     }
-    .gallery-container{
+
+    .gallery-container {
         margin-top: 7rem;
     }
 }

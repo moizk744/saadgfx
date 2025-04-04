@@ -52,6 +52,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./faq.css">
     <link rel="stylesheet" href="./loader.css">
+    <link rel="stylesheet" href="footer.css">
 </head>
 
 <!-- Google tag (gtag.js) -->
@@ -66,17 +67,12 @@
 
 <body>
     <!-- loader start -->
-    <div id="loading-screen"
-        style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #f5f5f5; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 9999;">
-        <div style="text-align: center;">
-            <div style="font-size: 18px; margin-bottom: 20px; font-family: 'Poppins', sans-serif;">LOADING...</div>
-            <div style="width: 300px; height: 30px; border: 2px solid #333; margin-bottom: 20px; position: relative;">
-                <div id="progress-bar"
-                    style="height: 100%; width: 0%; background: linear-gradient(to right, #333333, #999999); transition: width 0.5s ease;">
-                </div>
-            </div>
-            <div id="percentage" style="font-size: 18px; font-family: 'Poppins', sans-serif;">0%</div>
+    <div class="loader-wrapper" id="loader">
+        <div class="thumbnail-text">AMAZING THINGS ARE IN PROCESS</div>
+        <div class="progress-container">
+            <div class="progress-bar" id="progress"></div>
         </div>
+        <div class="load-percentage" id="percentage">0%</div>
     </div>
     <!-- loader end -->
     <div id="main-content" style="display: none;">
@@ -460,6 +456,57 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- main footer -->
+                <footer class="saadgfx-footer pt-5 mt-5">
+                    <div class="footer-container container">
+                        <div class="footer-row row">
+                            <!-- About Column -->
+                            <div class="footer-col col-md-4 mb-4">
+                                <h5 class="footer-brand">Saad<span class="text-accent">GFX</span></h5>
+                                <p class="footer-description">Creative thumbnail designer specializing in high CTR
+                                    designs that convert. Let's make your content stand out from the competition!</p>
+                            </div>
+                            <!-- Quick Links Column -->
+                            <div class="footer-col col-md-4 mb-4">
+                                <h5 class="footer-heading">Quick <span class="text-accent">Links</span></h5>
+                                <ul class="footer-links list-unstyled">
+                                    <li><a href="./index.html" class="footer-link">Home</a></li>
+                                    <li><a href="./my_work.html" class="footer-link">My Thumbnails</a></li>
+                                    <li><a href="./about.html" class="footer-link">About Me</a></li>
+                                    <li><a href="./contact.html" class="footer-link">Contact</a></li>
+                                </ul>
+                            </div>
+                            <!-- Contact Column -->
+                            <div class="footer-col col-md-4 mb-4">
+                                <h5 class="footer-heading">Get in <span class="text-accent">Touch</span></h5>
+                                <ul class="footer-social list-unstyled">
+                                    <li class="mb-2">
+                                        <a href="mailto:saadahm9419@gmail.com" target="_blank" class="footer-link">
+                                            <i class="fas fa-envelope me-2"></i>saadahm9419@gmail.com
+                                        </a>
+                                    </li>
+                                    <li class="mb-2">
+                                        <a href="https://www.youtube.com/@Thumbcraft-g5x" target="_blank"
+                                            class="footer-link">
+                                            <i class="fa-brands fa-youtube"></i> Youtube
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.instagram.com/saad.graphics94/" target="_blank"
+                                            class="footer-link">
+                                            <i class="fab fa-instagram me-2"></i>Instagram
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="footer-copyright border-top border-dark pt-3 text-center">
+                            <p class="mb-0">&copy; 2025 SaadGFX. All rights reserved</p>
+                        </div>
+                    </div>
+                </footer>
+                <!-- main footer -->
             </div>
         </div>
     </div>
@@ -475,34 +522,38 @@
 
         // loader
 
+        // Loader functionality
         document.addEventListener('DOMContentLoaded', function () {
-            const loadingScreen = document.getElementById('loading-screen');
-            const mainContent = document.getElementById('main-content');
-            const progressBar = document.getElementById('progress-bar');
-            const percentageText = document.getElementById('percentage');
-
             let progress = 0;
+            const progressBar = document.getElementById('progress');
+            const percentage = document.getElementById('percentage');
+            const loader = document.getElementById('loader');
+            const mainContent = document.getElementById('main-content');
 
-            // Simulate loading with increasing progress
-            const interval = setInterval(function () {
-                // Simulate different loading speeds
-                const increment = Math.random() * (progress < 80 ? 5 : 2);
-                progress += increment;
+            const loadingInterval = setInterval(function () {
+                if (progress < 70) {
+                    progress += Math.random() * 10;
+                } else {
+                    progress += Math.random() * 3;
+                }
 
                 if (progress >= 100) {
                     progress = 100;
-                    clearInterval(interval);
+                    clearInterval(loadingInterval);
 
-                    // Hide loading screen and show content after a brief delay
                     setTimeout(function () {
-                        loadingScreen.style.display = 'none';
-                        mainContent.style.display = 'block';
-                    }, 2000);
+                        loader.style.opacity = '0';
+                        setTimeout(function () {
+                            loader.style.display = 'none';
+                            mainContent.style.display = 'block';
+                        }, 500);
+                    }, 400);
                 }
 
-                progressBar.style.width = progress + '%';
-                percentageText.textContent = Math.round(progress) + '%';
-            }, 100);
+                const currentProgress = Math.floor(progress);
+                progressBar.style.width = currentProgress + '%';
+                percentage.textContent = currentProgress + '%';
+            }, 150);
         });
     </script>
 

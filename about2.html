@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #111;
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .about-section {
+            padding: 80px 0;
+        }
+
+        .about-heading {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .accent-color {
+            color: #ff5722;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        .skills-container {
+            background-color: rgba(30, 30, 30, 0.7);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+
+        .skill-bar {
+            height: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .skill-percentage {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 10px;
+            border-radius: 5px;
+            background: linear-gradient(90deg, #ff5722, #ff9800);
+        }
+
+        .stats-box {
+            background-color: rgba(30, 30, 30, 0.7);
+            border-radius: 15px;
+            padding: 25px 20px;
+            text-align: center;
+            margin-bottom: 25px;
+            transition: transform 0.3s;
+        }
+
+        .stats-box:hover {
+            transform: translateY(-10px);
+            background-color: rgba(50, 50, 50, 0.7);
+        }
+
+        .stats-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ff5722;
+            margin-bottom: 10px;
+        }
+
+        .testimonial {
+            background-color: rgba(30, 30, 30, 0.7);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .quote-icon {
+            font-size: 4rem;
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            opacity: 0.1;
+            color: #ff5722;
+        }
+
+        .client-info {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .client-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            background-color: #333;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 30px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: #ff5722;
+        }
+
+        .timeline-date {
+            font-weight: 600;
+            color: #ff5722;
+            margin-bottom: 5px;
+        }
+
+        .cta-box {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/api/placeholder/800/400') center/cover;
+            border-radius: 15px;
+            padding: 50px 30px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .btn-custom {
+            background: linear-gradient(90deg, #ff5722, #ff9800);
+            border: none;
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 30px;
+            transition: all 0.3s;
+        }
+
+        .btn-custom:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 87, 34, 0.3);
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50px;
+            height: 4px;
+            background: #ff5722;
+        }
+
+        .thumbnail-examples {
+            margin-top: 50px;
+        }
+
+        .thumbnail-card {
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            position: relative;
+            transition: transform 0.3s;
+        }
+
+        .thumbnail-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .thumbnail-img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+        }
+
+        .thumbnail-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            padding: 20px;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Main Content -->
+    <main>
+        <!-- About Section -->
+        <section class="about-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <h1 class="about-heading text-center">About <span class="accent-color">Me</span></h1>
+
+                        <div class="row mb-5">
+                            <div class="col-md-5">
+                                <div class="position-relative">
+                                    <img src="./logo.jpeg" alt="Profile" class="img-fluid rounded-3">
+                                    <div class="position-absolute"
+                                        style="bottom: -20px; right: -20px; background: #ff5722; width: 120px; height: 120px; border-radius: 15px; display: flex; align-items: center; justify-content: center;">
+                                        <h3 class="m-0">2+ Years<br>Experience</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-7">
+                                <p class="about-text">
+                                    Hi there! I'm a passionate <span class="accent-color">Thumbnail Designer</span> with
+                                    over 2 years of experience in the digital content industry. My journey began when I
+                                    discovered the significant impact that thumbnails have on content engagement and
+                                    click-through rates.
+                                </p>
+                                <p class="about-text">
+                                    I specialize in creating eye-catching, conversion-focused thumbnails that not only
+                                    grab attention but drive real results for content creators, businesses, and
+                                    marketers. Each design is strategically crafted to stand out in crowded feeds and
+                                    search results.
+                                </p>
+
+                                <div class="row mt-4">
+                                    <div class="col-6">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div
+                                                style="width: 40px; height: 40px; background: rgba(255, 87, 34, 0.2); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                    fill="#ff5722" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zM6.79 5.093A.5.5 0 0 1 7 5.5v1a.5.5 0 0 1-.5.5v1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5v1a.5.5 0 0 1 1 0v-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5v-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1-.21-.407z" />
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <h5 class="m-0">Email</h5>
+                                                <p class="m-0 text-muted">contact@example.com</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div
+                                                style="width: 40px; height: 40px; background: rgba(255, 87, 34, 0.2); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                    fill="#ff5722" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <h5 class="m-0">Phone</h5>
+                                                <p class="m-0 text-muted">+1 (234) 567-8900</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div
+                                                style="width: 40px; height: 40px; background: rgba(255, 87, 34, 0.2); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                    fill="#ff5722" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <h5 class="m-0">Location</h5>
+                                                <p class="m-0 text-muted">New York, USA</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div
+                                                style="width: 40px; height: 40px; background: rgba(255, 87, 34, 0.2); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                    fill="#ff5722" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                                    <path
+                                                        d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z" />
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <h5 class="m-0">Freelance</h5>
+                                                <p class="m-0 text-muted">Available</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mt-4">
+                                    <a href="#" class="btn btn-custom px-4 me-2">Download CV</a>
+                                    <a href="#" class="btn btn-outline-light px-4">My Work</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- My Skills Section -->
+                        <div class="skills-container">
+                            <h3 class="section-title">My Skills</h3>
+
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h5 class="m-0">Photoshop</h5>
+                                    <span>95%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-percentage" style="width: 95%;"></div>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h5 class="m-0">Illustrator</h5>
+                                    <span>85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-percentage" style="width: 85%;"></div>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h5 class="m-0">After Effects</h5>
+                                    <span>75%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-percentage" style="width: 75%;"></div>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h5 class="m-0">Premiere Pro</h5>
+                                    <span>70%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-percentage" style="width: 70%;"></div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h5 class="m-0">Canva</h5>
+                                    <span>90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-percentage" style="width: 90%;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Stats Section -->
+                        <div class="row">
+                            <div class="col-md-3 col-6">
+                                <div class="stats-box">
+                                    <div class="stats-number">300+</div>
+                                    <div>Projects Completed</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <div class="stats-box">
+                                    <div class="stats-number">150+</div>
+                                    <div>Happy Clients</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <div class="stats-box">
+                                    <div class="stats-number">15M+</div>
+                                    <div>Views Generated</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <div class="stats-box">
+                                    <div class="stats-number">45%</div>
+                                    <div>CTR Improvement</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Experience Timeline -->
+                        <div class="skills-container mt-5">
+                            <h3 class="section-title">My Experience</h3>
+
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-date">2023 - Present</div>
+                                <h4>Senior Thumbnail Designer</h4>
+                                <p>Freelance</p>
+                                <p>Working with top content creators and businesses to design thumbnails that increase
+                                    click-through rates by an average of 45%. Specialized in YouTube, course platforms,
+                                    and e-commerce thumbnails.</p>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-date">2022 - 2023</div>
+                                <h4>Thumbnail Designer</h4>
+                                <p>Digital Marketing Agency</p>
+                                <p>Designed thumbnails for 50+ clients across various industries. Developed a systematic
+                                    approach to thumbnail creation that consistently outperformed previous designs.</p>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-date">2021 - 2022</div>
+                                <h4>Graphic Design Intern</h4>
+                                <p>Creative Studio</p>
+                                <p>Started my journey in the digital design world, focusing on social media graphics and
+                                    thumbnail design for small businesses and startups.</p>
+                            </div>
+                        </div>
+
+                        <!-- Thumbnails Section -->
+                        <div class="thumbnail-examples">
+                            <h3 class="section-title">Featured Thumbnails</h3>
+                            <p class="mb-5">Here are some examples of my recent work that have driven exceptional
+                                results for clients.</p>
+
+                            <div class="row">
+                                <div class="col-md-4 col-6">
+                                    <div class="thumbnail-card">
+                                        <img src="/api/placeholder/400/225" alt="Thumbnail Example"
+                                            class="thumbnail-img">
+                                        <div class="thumbnail-overlay">
+                                            <h5>Tech Review</h5>
+                                            <p class="m-0">45% CTR</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-6">
+                                    <div class="thumbnail-card">
+                                        <img src="/api/placeholder/400/225" alt="Thumbnail Example"
+                                            class="thumbnail-img">
+                                        <div class="thumbnail-overlay">
+                                            <h5>Travel Vlog</h5>
+                                            <p class="m-0">38% CTR</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-6">
+                                    <div class="thumbnail-card">
+                                        <img src="/api/placeholder/400/225" alt="Thumbnail Example"
+                                            class="thumbnail-img">
+                                        <div class="thumbnail-overlay">
+                                            <h5>Tutorial</h5>
+                                            <p class="m-0">52% CTR</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-6">
+                                    <div class="thumbnail-card">
+                                        <img src="/api/placeholder/400/225" alt="Thumbnail Example"
+                                            class="thumbnail-img">
+                                        <div class="thumbnail-overlay">
+                                            <h5>Product Launch</h5>
+                                            <p class="m-0">41% CTR</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-6">
+                                    <div class="thumbnail-card">
+                                        <img src="/api/placeholder/400/225" alt="Thumbnail Example"
+                                            class="thumbnail-img">
+                                        <div class="thumbnail-overlay">
+                                            <h5>Educational</h5>
+                                            <p class="m-0">47% CTR</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-6">
+                                    <div class="thumbnail-card">
+                                        <img src="/api/placeholder/400/225" alt="Thumbnail Example"
+                                            class="thumbnail-img">
+                                        <div class="thumbnail-overlay">
+                                            <h5>Entertainment</h5>
+                                            <p class="m-0">56% CTR</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonials -->
+                        <div class="mt-5">
+                            <h3 class="section-title">Client Feedback</h3>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="testimonial">
+                                        <div class="quote-icon">"</div>
+                                        <p>"Working with this designer transformed our channel. Our thumbnails now
+                                            consistently get 40%+ higher CTR than our old designs. Worth every penny!"
+                                        </p>
+                                        <div class="client-info">
+                                            <div class="client-avatar"></div>
+                                            <div>
+                                                <h5 class="m-0">Sarah Johnson</h5>
+                                                <p class="m-0 text-muted">Tech YouTuber</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="testimonial">
+                                        <div class="quote-icon">"</div>
+                                        <p>"I was skeptical about investing in professional thumbnails, but the ROI has
+                                            been incredible. Our course sales increased by 35% after implementing the
+                                            new thumbnail designs."</p>
+                                        <div class="client-info">
+                                            <div class="client-avatar"></div>
+                                            <div>
+                                                <h5 class="m-0">Michael Chen</h5>
+                                                <p class="m-0 text-muted">Online Course Creator</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Call to Action -->
+                        <div class="cta-box">
+                            <h2 class="mb-4">Ready to boost your content's performance?</h2>
+                            <p class="mb-4">Let's work together to create thumbnails that grab attention and drive
+                                results.</p>
+                            <a href="#" class="btn btn-custom px-5 py-3">Get in Touch</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

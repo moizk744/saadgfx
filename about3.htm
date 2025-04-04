@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #ff6b33;
+            --secondary-color: #222;
+            --text-color: #f8f9fa;
+            --accent-color: #444;
+        }
+
+        body {
+            background-color: #111;
+            color: var(--text-color);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+        }
+
+        .about-container {
+            padding: 80px 0;
+        }
+
+        .intro-text {
+            font-size: 1.1rem;
+            margin-bottom: 50px;
+            line-height: 1.8;
+        }
+
+        .highlight {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .skill-card {
+            background-color: var(--secondary-color);
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(255, 107, 51, 0.2);
+        }
+
+        .skill-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .skill-title {
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background-color: var(--primary-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: -34px;
+            top: 0;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+        }
+
+        .timeline-date {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .testimonial-card {
+            background-color: var(--secondary-color);
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+            position: relative;
+            height: 100%;
+        }
+
+        .testimonial-card:before {
+            content: '\201C';
+            font-family: Georgia, serif;
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            font-size: 60px;
+            color: rgba(255, 107, 51, 0.2);
+        }
+
+        .client-info {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .client-name {
+            font-weight: 600;
+        }
+
+        .client-title {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .stats-container {
+            background-color: var(--secondary-color);
+            border-radius: 10px;
+            padding: 40px 25px;
+            margin-top: 50px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .cta-section {
+            background-color: var(--primary-color);
+            border-radius: 10px;
+            padding: 50px 30px;
+            text-align: center;
+            margin-top: 80px;
+            margin-bottom: 50px;
+        }
+
+        .cta-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .cta-btn {
+            background-color: #fff;
+            color: var(--primary-color);
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 30px;
+            border: none;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .section-divider {
+            height: 2px;
+            background: linear-gradient(90deg, rgba(255, 107, 51, 0) 0%, rgba(255, 107, 51, 1) 50%, rgba(255, 107, 51, 0) 100%);
+            margin: 80px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container about-container">
+        <!-- Hero Section -->
+        <div class="row mb-5">
+            <div class="col-12 text-center mb-4">
+                <h1 class="display-4 fw-bold">About <span class="highlight">Me</span></h1>
+            </div>
+            <div class="col-md-10 mx-auto">
+                <div class="intro-text text-center">
+                    <p class="lead mb-4">I'm a <span class="highlight">creative designer</span> with a passion for
+                        creating engaging visual content that drives results. With expertise in thumbnail design for
+                        digital platforms, I help content creators increase their click-through rates and grow their
+                        audience.</p>
+                    <p>My approach combines eye-catching visuals with strategic elements that trigger curiosity and
+                        prompt action. I believe great design is not just about aesthetics — it's about creating a
+                        bridge between content and audience.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- My Skills Section -->
+        <div class="row mb-5">
+            <div class="col-12 mb-4">
+                <h2 class="section-title">My <span style="color: #fff;">Skills</span></h2>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3 class="skill-title">Graphic Design</h3>
+                    <p>Expert in creating eye-catching visuals that grab attention in crowded digital spaces. Skilled in
+                        color theory, typography, and composition.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="skill-title">Conversion Optimization</h3>
+                    <p>I design with metrics in mind, focusing on creating thumbnails that not only look good but also
+                        drive clicks, engagement, and conversions.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="skill-title">Psychology-Driven Design</h3>
+                    <p>Understanding audience psychology to create designs that trigger emotional responses and drive
+                        action through visual storytelling.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3 class="skill-title">Photoshop Expert</h3>
+                    <p>Advanced skills in Adobe Photoshop, allowing for complex compositions, professional photo
+                        manipulation, and high-quality visuals.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3 class="skill-title">Audience Targeting</h3>
+                    <p>Creating designs that speak directly to specific audience demographics, interests, and pain
+                        points to maximize engagement.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3 class="skill-title">Content Strategy</h3>
+                    <p>Helping creators align their thumbnail design with their overall content strategy for consistent
+                        branding and audience growth.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- Experience Section -->
+        <div class="row mb-5">
+            <div class="col-12 mb-4">
+                <h2 class="section-title">My <span style="color: #fff;">Journey</span></h2>
+            </div>
+
+            <div class="col-lg-10 mx-auto">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">2023 - Present</div>
+                        <h4>Freelance Thumbnail Designer</h4>
+                        <p>Working with content creators across multiple platforms to boost their visual presence and
+                            increase click-through rates. Specialized in creating thumbnails that convert casual
+                            browsers into engaged viewers.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">2022 - 2023</div>
+                        <h4>Junior Designer at Digital Media Agency</h4>
+                        <p>Collaborated with a team of marketers and content creators to develop visual strategies for
+                            clients. Learned the fundamentals of conversion-focused design and audience targeting.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">2021 - 2022</div>
+                        <h4>Graphic Design Education</h4>
+                        <p>Completed intensive courses in graphic design, digital marketing, and visual psychology.
+                            Focused on developing skills specifically for digital content creation and engagement.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- Client Testimonials -->
+        <div class="row mb-5">
+            <div class="col-12 mb-4">
+                <h2 class="section-title">Client <span style="color: #fff;">Feedback</span></h2>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="testimonial-card">
+                    <p>"After switching to thumbnails designed by this talented professional, my click-through rate
+                        increased by 47%. The designs perfectly capture the essence of my content while still creating
+                        curiosity. Absolutely worth every penny!"</p>
+                    <div class="client-info">
+                        <div>
+                            <div class="client-name">Alex Rodriguez</div>
+                            <div class="client-title">Tech YouTuber, 450K subscribers</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="testimonial-card">
+                    <p>"I was struggling to stand out in a crowded niche. These thumbnails completely transformed my
+                        channel's performance. Not only do they look professional, but they also convert so much better
+                        than my previous designs."</p>
+                    <div class="client-info">
+                        <div>
+                            <div class="client-name">Sarah Johnson</div>
+                            <div class="client-title">Fitness Content Creator</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="testimonial-card">
+                    <p>"The turnaround time is incredible, and the quality never suffers. I've tried many designers
+                        before, but none understood the balance between clickbait and authenticity like this. My
+                        audience growth has been steady since we started working together."</p>
+                    <div class="client-info">
+                        <div>
+                            <div class="client-name">Michael Chen</div>
+                            <div class="client-title">Business Coach & Influencer</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="testimonial-card">
+                    <p>"I was initially skeptical about investing in professional thumbnail design, but the ROI has been
+                        fantastic. My videos now get significantly more clicks, and the consistent style has helped
+                        strengthen my brand identity."</p>
+                    <div class="client-info">
+                        <div>
+                            <div class="client-name">Emma Williams</div>
+                            <div class="client-title">Travel Vlogger</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="stats-container">
+            <div class="row">
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <div class="stat-item">
+                        <div class="stat-number" id="clientsCount">120+</div>
+                        <div class="stat-label">Happy Clients</div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <div class="stat-item">
+                        <div class="stat-number" id="projectsCount">1,500+</div>
+                        <div class="stat-label">Thumbnails Created</div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <div class="stat-item">
+                        <div class="stat-number" id="avgCTR">42%</div>
+                        <div class="stat-label">Avg. CTR Increase</div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="stat-item">
+                        <div class="stat-number" id="satisfactionRate">98%</div>
+                        <div class="stat-label">Client Satisfaction</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <h2 class="cta-title">Ready to Boost Your Content Performance?</h2>
+            <p class="mb-4">Let's work together to create thumbnails that not only look amazing but also drive real
+                results for your content.</p>
+            <button class="cta-btn">Get in Touch Today</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Simple animation for stats
+        document.addEventListener('DOMContentLoaded', function () {
+            // Add smooth scrolling animation
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Skills card hover effect enhancement
+            const skillCards = document.querySelectorAll('.skill-card');
+            skillCards.forEach(card => {
+                card.addEventListener('mouseenter', function () {
+                    this.style.transform = 'translateY(-10px)';
+                    this.style.boxShadow = '0 10px 20px rgba(255, 107, 51, 0.2)';
+                });
+
+                card.addEventListener('mouseleave', function () {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = 'none';
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

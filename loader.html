@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Loader</title>
+    <style>
+        /* Base styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #111;
+            font-family: 'Poppins', sans-serif;
+            overflow: hidden;
+        }
+        
+        /* Loader overlay */
+        .loader-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #111;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 9999;
+            transition: opacity 0.5s ease-out;
+        }
+        
+        /* Main content that will be shown after loading */
+        .content {
+            display: none;
+            padding: 50px;
+            color: white;
+            text-align: center;
+        }
+        
+        /* Loader text & elements */
+        .loader-text {
+            color: #fff;
+            font-weight: 600;
+            margin-top: 15px;
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+        
+        .load-percentage {
+            color: #ff6b33;
+            font-weight: 700;
+            font-size: 24px;
+            margin-top: 10px;
+        }
+        
+        /* Loading text animation */
+        .thumbnail-text {
+            color: #ff6b33;
+            font-weight: 700;
+            font-size: 18px;
+            text-transform: uppercase;
+            animation: fadeInOut 2s infinite;
+            margin-bottom: 20px;
+        }
+        
+        /* Text fade animation */
+        @keyframes fadeInOut {
+            0% { opacity: 0.2; }
+            50% { opacity: 1; }
+            100% { opacity: 0.2; }
+        }
+        
+        /* Progress bar */
+        .progress-container {
+            width: 180px;
+            height: 4px;
+            background-color: #333;
+            margin-top: 20px;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background-color: #ff6b33;
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- Loader overlay -->
+    <div class="loader-wrapper" id="loader">
+        <div class="thumbnail-text">AMAZING THINGS ARE IN PROCESS</div>
+        <div class="progress-container">
+            <div class="progress-bar" id="progress"></div>
+        </div>
+        <div class="load-percentage" id="percentage">0%</div>
+    </div>
+
+    <!-- Main content (hidden until loading completes) -->
+    <div class="content" id="content">
+        <h1>Your website content goes here</h1>
+        <p>This is where your main site content will display after loading.</p>
+        <button onclick="showLoader()">Show Loader Again</button>
+    </div>
+
+    <script>
+        // Set up loader functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Variables to track loading progress
+            let progress = 0;
+            const progressBar = document.getElementById('progress');
+            const percentage = document.getElementById('percentage');
+            const loader = document.getElementById('loader');
+            const content = document.getElementById('content');
+            
+            // Simulate loading progress
+            const loadingInterval = setInterval(function() {
+                // Increment progress (faster at first, slower at end)
+                if (progress < 70) {
+                    progress += Math.random() * 10;
+                } else {
+                    progress += Math.random() * 3;
+                }
+                
+                // Ensure we don't exceed 100%
+                if (progress >= 100) {
+                    progress = 100;
+                    clearInterval(loadingInterval);
+                    
+                    // Hide loader and show content after a short delay
+                    setTimeout(function() {
+                        loader.style.opacity = '0';
+                        setTimeout(function() {
+                            loader.style.display = 'none';
+                            content.style.display = 'block';
+                        }, 500);
+                    }, 400);
+                }
+                
+                // Update visual elements
+                const currentProgress = Math.floor(progress);
+                progressBar.style.width = currentProgress + '%';
+                percentage.textContent = currentProgress + '%';
+            }, 150);
+        });
+        
+        // Function to show loader again (for demo purposes)
+        function showLoader() {
+            const loader = document.getElementById('loader');
+            const content = document.getElementById('content');
+            const progressBar = document.getElementById('progress');
+            const percentage = document.getElementById('percentage');
+            
+            // Reset progress
+            progressBar.style.width = '0%';
+            percentage.textContent = '0%';
+            
+            // Show loader
+            content.style.display = 'none';
+            loader.style.display = 'flex';
+            loader.style.opacity = '1';
+            
+            // Restart loading sequence
+            let progress = 0;
+            const loadingInterval = setInterval(function() {
+                if (progress < 70) {
+                    progress += Math.random() * 10;
+                } else {
+                    progress += Math.random() * 3;
+                }
+                
+                if (progress >= 100) {
+                    progress = 100;
+                    clearInterval(loadingInterval);
+                    
+                    setTimeout(function() {
+                        loader.style.opacity = '0';
+                        setTimeout(function() {
+                            loader.style.display = 'none';
+                            content.style.display = 'block';
+                        }, 500);
+                    }, 400);
+                }
+                
+                const currentProgress = Math.floor(progress);
+                progressBar.style.width = currentProgress + '%';
+                percentage.textContent = currentProgress + '%';
+            }, 150);
+        }
+    </script>
+</body>
+</html>
